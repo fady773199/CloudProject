@@ -3,27 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مشروع الحوسبة السحابية</title>
+    <title>منصتي السحابية الذكية</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="login-card">
-        <h2>نظام الدخول السحابي</h2>
-        <div class="input-group">
-            <input type="email" id="email" placeholder="البريد الإلكتروني" required>
-            <input type="password" id="password" placeholder="كلمة المرور" required>
+
+    <div id="auth-page" class="auth-container">
+        <div class="auth-card">
+            <i class="fas fa-cloud-upload-alt logo-icon"></i>
+            <h2>تسجيل الدخول السحابي</h2>
+            <div class="input-group">
+                <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+                <input type="password" id="password" placeholder="كلمة المرور" required>
+            </div>
+            <button onclick="login()" class="btn-main">دخول</button>
+            <button onclick="signUp()" class="btn-sub">إنشاء حساب جديد</button>
+            <p id="msg"></p>
         </div>
-        <div class="button-group">
-            <button onclick="signUp()" class="btn-signup">إنشاء حساب جديد</button>
-            <button onclick="login()" class="btn-login">تسجيل الدخول</button>
-        </div>
-        <p id="status-msg"></p>
+    </div>
+
+    <div id="home-page" class="hidden">
+        <nav class="navbar">
+            <div class="nav-logo">سحابة التميز</div>
+            <div class="nav-user">
+                <span id="user-display"></span>
+                <button onclick="logout()" class="btn-logout">خروج</button>
+            </div>
+        </nav>
+
+        <header class="hero">
+            <h1>مرحباً بك في عالم الحوسبة السحابية</h1>
+            <p>لقد قمت بتسجيل الدخول بنجاح عبر قاعدة بيانات Firebase السحابية.</p>
+        </header>
+
+        <section class="features">
+            <div class="feat-card">
+                <i class="fas fa-database"></i>
+                <h3>قاعدة بيانات حية</h3>
+                <p>بياناتك محفوظة وآمنة في سحابة Google.</p>
+            </div>
+            <div class="feat-card">
+                <i class="fas fa-server"></i>
+                <h3>استضافة GitHub</h3>
+                <p>موقعك يعمل الآن من خوادم عالمية.</p>
+            </div>
+            <div class="feat-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>أمان عالٍ</h3>
+                <p>نظام توثيق متكامل يحمي دخولك.</p>
+            </div>
+        </section>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
-    
     <script src="app.js"></script>
 </body>
 </html>
